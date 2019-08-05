@@ -4,9 +4,12 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.web.bind.annotation.RestController;
+
 import com.rackspace.hr.management.controller.LeaveDataController;
 import com.rackspace.hr.management.dto.LeaveDataDTO;
 
+@RestController
 public class LeaveDataControllerImpl implements LeaveDataController{
 
     @Override
@@ -22,7 +25,7 @@ public class LeaveDataControllerImpl implements LeaveDataController{
     }
 
     @Override
-    public LeaveDataDTO getLeaveDataById() {
+    public LeaveDataDTO getLeaveDataById(String leaveDataId) {
         // TODO Auto-generated method stub
         return null;
     }
@@ -34,7 +37,7 @@ public class LeaveDataControllerImpl implements LeaveDataController{
     }
 
     @Override
-    public String deleteLeaveData() {
+    public String deleteLeaveData(String leaveDataId) {
         // TODO Auto-generated method stub
         return null;
     }
