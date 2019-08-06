@@ -1,1 +1,25 @@
-<p>contact works!</p>
+<h1>Apply Leave</h1>
+
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+  <h5 *ngIf="success" style="color:green;">Your Leave is valid!</h5>
+  <label>
+    Name: <input type="text" formControlName="name">
+    <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+      <div *ngIf="messageForm.controls.name.errors.required">Your name is required to apply leave</div>
+    </div>
+  </label>
+  <label>
+    Leave Description:<textarea formControlName="message"></textarea>
+    <div *ngIf="submitted && messageForm.controls.message.errors" class="error">
+      <div *ngIf="messageForm.controls.message.errors.required">Leave description is required</div>
+    </div>
+  </label>
+  <input type="submit" value="Apply Leave" class="cta">
+</form>
+<div *ngIf="submitted" class="results">
+  <strong>Name: </strong>
+  <span>{{messageForm.controls.name.value}}</span>
+
+  <strong>Description: </strong>
+  <span>{{messageForm.controls.message.value}}</span>
+</div>
