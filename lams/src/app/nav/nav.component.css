@@ -1,5 +1,6 @@
 header {
-    background: #7700FF;
+    /* background: #7700FF; */
+    background: black;
     color:white;
 }
     .logo {
@@ -26,6 +27,7 @@ header {
 
                     a:hover {
                         background: #8E2BFF;
+                        font-weight: bold;
 
                     }
 
