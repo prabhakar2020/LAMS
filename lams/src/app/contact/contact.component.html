@@ -8,12 +8,30 @@
       <div *ngIf="messageForm.controls.name.errors.required">Your name is required to apply leave</div>
     </div>
   </label>
+  <label class='datepic'>
+    Start Date:<ejs-datepicker id='end_datepicker' formControlName="start_date" placeholder='Select Start date' [value]='dateValue' [min]='minDate' [max]='maxDate'></ejs-datepicker>
+    <div *ngIf="submitted && messageForm.controls.start_date.errors" class="error">
+      <div *ngIf="messageForm.controls.start_date.errors.required">Leave Start Date is required</div>
+    </div>
+    <br/>End Date:<ejs-datepicker id='start_datepicker' formControlName="end_date"  placeholder='Select End date' [value]='dateValue' [min]='minDate' [max]='maxDate'></ejs-datepicker>
+    <div *ngIf="submitted && messageForm.controls.end_date.errors" class="error">
+      <div *ngIf="messageForm.controls.end_date.errors.required">Leave End Date is required</div>
+    </div>
+  </label>
+  <br/>
+  <label>
+    Leave Type:<select formControlName="leavetype"><option>Optional Leave</option><option>CompOff</option><option>Leave Without Pay</option></select>
+    <div *ngIf="submitted && messageForm.controls.leavetype.errors" class="error">
+      <div *ngIf="messageForm.controls.leavetype.errors.required">Leave Type is required</div>
+    </div>
+  </label><br/>
   <label>
     Leave Description:<textarea formControlName="message"></textarea>
     <div *ngIf="submitted && messageForm.controls.message.errors" class="error">
       <div *ngIf="messageForm.controls.message.errors.required">Leave description is required</div>
     </div>
   </label>
+
   <input type="submit" value="Apply Leave" class="cta">
 </form>
 <div *ngIf="submitted" class="results">
@@ -23,3 +41,4 @@
   <strong>Description: </strong>
   <span>{{messageForm.controls.message.value}}</span>
 </div>
+

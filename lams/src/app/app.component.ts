@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Leave & Attendance Management System';
   footer= 'Design By Prabhakar';
+  public minDate: Date = new Date ("05/07/1900");
+    public maxDate: Date = new Date ("12/31/2020");
+    public dateValue: Date = new Date ("05/16/2017");
+    constructor () {}
 }

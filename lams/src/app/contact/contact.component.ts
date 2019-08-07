@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
+
 export class ContactComponent implements OnInit {
   messageForm: FormGroup;
   submitted = false;
@@ -14,7 +15,10 @@ export class ContactComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
     this.messageForm = this.formBuilder.group({
       name: ['', Validators.required],
-      message: ['', Validators.required]
+      message: ['', Validators.required],
+      leavetype: ['', Validators.required],
+      start_date: ['', Validators.required],
+      end_date: ['', Validators.required]
     })
   }
 
