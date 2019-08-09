@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { TransactionsComponent } from './transactions/transactions.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
     NavComponent,
     AboutComponent,
     ContactComponent,
-    HomeComponent
+    HomeComponent,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,64 @@
+<h1>Leave Transactions</h1>
+<style>
+    table, th , td  {
+      border: 1px solid grey;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+    table tr:nth-child(odd) {
+      background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+      background-color: #ffffff;
+    }
+    </style>
+
+ 
+    
+    <div ng-app="myApp" ng-controller="customersCtrl"> 
+    
+    <table style='width:100%;'>
+        <tr>
+            <th>From Date</th>
+            <th>To Date</th>
+            <th>Applicable Days</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Created On</th>
+        </tr>
+      <tr>
+        <td>01 Apr 19</td>
+        <td>30 Jun 19</td>
+        <td>5.25</td>
+        <td>Privileged Leave</td>
+        <td>Credited</td>
+        <td>01 Apr 2019</td>
+      </tr>
+      <tr>
+            <td>01 Apr 19</td>
+            <td>30 Jun 19</td>
+            <td>5.25</td>
+            <td>Privileged Leave</td>
+            <td>Credited</td>
+            <td>01 Apr 2019</td>
+          </tr>
+          <tr>
+                <td>01 Apr 19</td>
+                <td>30 Jun 19</td>
+                <td>1</td>
+                <td>Optional Leave</td>
+                <td>Credited</td>
+                <td>01 Apr 2019</td>
+              </tr>
+              <tr>
+                    <td>15 Apr 19</td>
+                    <td>19 Apr 19</td>
+                    <td>-5</td>
+                    <td>Privileged Leave</td>
+                    <td>Approved</td>
+                    <td>15 Apr 2019</td>
+                  </tr>
+    </table>
+    
+    </div>
+    

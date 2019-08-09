@@ -24,7 +24,9 @@ export class ContactComponent implements OnInit {
 
   onSubmit(){
     this.submitted = true;
+    console.log(this.messageForm.name);
     if(this.messageForm.invalid){
+      console.log("Error")
       return;
     }
     this.success = true;

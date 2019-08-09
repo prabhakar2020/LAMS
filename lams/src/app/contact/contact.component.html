@@ -1,14 +1,83 @@
 <h1>Apply Leave</h1>
-
+<h5 *ngIf="success" style="color:green;">Your Leave is valid!</h5>
 <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
-  <h5 *ngIf="success" style="color:green;">Your Leave is valid!</h5>
-  <label>
-    Name: <input type="text" formControlName="name">
-    <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
-      <div *ngIf="messageForm.controls.name.errors.required">Your name is required to apply leave</div>
-    </div>
-  </label>
-  <label class='datepic'>
+  
+
+  <table style='width:100%;border: 1px solid grey;'>
+    <tr>
+      <td>Name:</td>
+      <td style="font-weight: bold;">
+          Prabhakar Gadupudi
+          <input type="text" name="name" style="display: block;" value="Prabhakar Gadupudi"/>
+      </td>
+      <td> Leave Balance:</td><td style="font-weight: bold; color:blue;">24</td>
+    </tr>
+    
+    <tr>
+        <td>Leave Year:</td>
+        <td>
+           <select><option>2019=2020</option></select>
+        </td>
+        <td>Leave Type:</td>
+        <td>
+           <select><option>Privileged Leage</option><option>Optional Leage</option><option>Compensatory Off</option><option>Leage Without Pay</option></select>
+        </td>
+      </tr>
+      <tr>
+          <td>Leave:</td>
+          <td>
+             <select><option>Full Day</option><option>Half Day</option></select>
+          </td>
+          <td>Approver:</td>
+          <td>
+             <select><option>Anand Paropkari</option><option>Nazim Akhtar</option><option>Puneet Narsapur</option><option>Omkar Kusre</option><option>Naresh Waswani</option></select>
+          </td>
+        </tr>
+
+        <tr>
+            <td>Start Date:</td>
+            <td>
+                <ejs-datepicker id='end_datepicker' formControlName="start_date" placeholder='Select Start date' [value]='dateValue' [min]='minDate' [max]='maxDate'></ejs-datepicker>
+            </td>
+            <td>End Date:</td>
+            <td>
+                <ejs-datepicker id='start_datepicker' formControlName="end_date"  placeholder='Select End date' [value]='dateValue' [min]='minDate' [max]='maxDate'></ejs-datepicker>
+            </td>
+          </tr>
+          <tr>
+              <td>Leave Description:</td>
+              <td colspan="3">
+                  <textarea formControlName="message"></textarea>
+                
+              </td>              
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="submit" value="Apply Leave" class="cta">
+                </td>         
+                <td>&nbsp;
+                    
+                </td>     
+              </tr>
+  </table>
+
+  <div style="text-align: center;">
+       
+          <div *ngIf="submitted && messageForm.controls.start_date.errors" class="error">
+              <div *ngIf="messageForm.controls.start_date.errors.required">Leave Start Date is required</div>
+            </div><br/>
+            <div *ngIf="submitted && messageForm.controls.end_date.errors" class="error">
+                <div *ngIf="messageForm.controls.end_date.errors.required">Leave End Date is required</div>
+              </div><br/>
+              <div *ngIf="submitted && messageForm.controls.message.errors" class="error">
+          <div *ngIf="messageForm.controls.message.errors.required">Leave description is required</div>
+        </div><br/>
+  </div>
+  
+
+
+</form>
+  <!-- <label class='datepic'>
     Start Date:<ejs-datepicker id='end_datepicker' formControlName="start_date" placeholder='Select Start date' [value]='dateValue' [min]='minDate' [max]='maxDate'></ejs-datepicker>
     <div *ngIf="submitted && messageForm.controls.start_date.errors" class="error">
       <div *ngIf="messageForm.controls.start_date.errors.required">Leave Start Date is required</div>
@@ -33,12 +102,12 @@
   </label>
 
   <input type="submit" value="Apply Leave" class="cta">
-</form>
-<div *ngIf="submitted" class="results">
+</form> -->
+<!-- <div *ngIf="submitted" class="results">
   <strong>Name: </strong>
   <span>{{messageForm.controls.name.value}}</span>
 
   <strong>Description: </strong>
   <span>{{messageForm.controls.message.value}}</span>
 </div>
-
+ -->
